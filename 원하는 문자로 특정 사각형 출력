@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std; 
+#define ROWS 15                //배열의 행과 열 자유롭게 조절
+#define COLS 15
+
+class Box
+{
+private:
+	char c;
+	int width;                   //가로
+	int height;                  //세로
+	
+public:
+	Box(int w, int h)            //생성자
+	{
+		c = '*';
+		width = w;
+		height = h;
+	}
+
+	void setFil(char f) { c = f; }         //문자를 세팅하는 함수
+
+	void setSize(int w, int h)             //사각형 크기를 세팅하는 함수
+	{
+		char arr[ROWS][COLS];
+		for (int i = 0; i < h; i++)
+		{
+			for (int j = 0; j < w; j++)
+			{
+				arr[i][j];
+			}
+		}
+	}
+	void draw()     //사각형 출력
+	{
+		char arr[ROWS][COLS];
+		for (int i = 0; i < height; i++)
+		{
+			for (int j = 0; j < width; j++)
+			{
+				arr[i][j] = { c };
+				cout << arr[i][j];
+			}
+			cout << "\n";
+		}
+	}
+};
+
+int main(void)
+{
+	Box s1(3, 4);       //객체 s1 생성
+	s1.setFil('*');
+	s1.setSize(3, 4);
+	s1.draw();
+	cout << "\n";
+
+	Box s2(6, 10);      //객체 s2 생성
+	s2.setFil('^');
+	s2.setSize(6, 10);
+	s2.draw();
+	cout << "\n";
+
+	return 0;
+}
